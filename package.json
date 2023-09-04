@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:production": "vite build && mv dist dist_netlify/NYUST-GDSC-Backstage"
+    "build:production": "vite build && mv dist dist_netlify",
+    "build:windows:production": "vite build && move dist NYUST-GDSC-BackStage",
+    "deploy": "yarn build:production && gh-pages -d ./dist_netlify",
+    "deploy:windows": "yarn build:windows:production && gh-pages -d ./NYUST-GDSC-BackStage"
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
